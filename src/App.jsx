@@ -50,7 +50,6 @@ function App() {
 
   const deleteContact = contactId => {
     const del = contacts.filter(contact => contact.id !== contactId);
-    console.log('del', del);
     setContacts(del);
   };
 
