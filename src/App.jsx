@@ -23,9 +23,9 @@ useEffect(()=>{setContacts(contacts = loadFromStorage('phonebook'))},[]);
   //     this.setState({ contacts: contacts });
   //   }
   //}
-	useEffect((state)=>{
-		if (state.contacts !== loadFromStorage('phonebook'))
-		{saveInStorage('phonebook', state.contacts)}},[]);
+	useEffect((contacts)=>{
+		if (contacts !== loadFromStorage('phonebook'))
+		{saveInStorage('phonebook', contacts)}},[contacts]);
   // componentDidUpdate(prevState) {
   //   if (this.state.contacts !== prevState.contacts) {
   //     saveInStorage('phonebook', this.state.contacts);
