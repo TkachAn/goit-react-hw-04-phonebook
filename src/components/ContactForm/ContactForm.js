@@ -1,26 +1,36 @@
-import { Component } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
-class ContactForm extends Component {
-  static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-  };
+function ContactForm() {
+  // static propTypes = {
+  //   onSubmit: PropTypes.func.isRequired,
+  // };
 
   //
-  state = {
-    name: '',
-    number: '',
-  };
+  // state = {
+  //   name: '',
+  //   number: '',
+  // };
+	const [name, setName] = useState('');
+	const [number, setNumber] = useState('');
   handleChange = e => {
-    const { name, value } = e.currentTarget;
-    this.setState({ [name]: value });
+    const { value } = e.currentTarget.name;
+    // this.setState({ [name]: value });
+		setName(value);
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state);
-    this.setState({ name: '', number: '' });
+    props.onSubmit(this.state
+			
+			);
+    // this.setState({ name: '', number: '' });
+		setName('');
+		setNumber('');
   };
+	useEffect(() => {
+    /**/
+  }, [name,number]);
   render() {
     const { name, number } = this.state;
     return (
